@@ -333,9 +333,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>USE_STDPERIPH_DRIVER,STM32F40_41xxx</Define>
+              <Define>USE_STDPERIPH_DRIVER,STM32F40_41xxx,ARM_MATH_CM4</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Device;..\Driver;..\Library\inc;..\User;..\User\Startup;..\System</IncludePath>
+              <IncludePath>..\Device;..\Driver;..\Library\inc;..\User;..\User\Startup;..\System;..\ETH_Driver\inc;..\Fatfs\inc;..\USB_Device\Core\inc;..\USB_HOST\Core\inc;..\USB_OTG\inc;..\USB_Device\Class\cdc\inc;..\USB_CONFIG;..\FatfsAPP</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -380,19 +380,9 @@
           <GroupName>User</GroupName>
           <Files>
             <File>
-              <FileName>delay.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\delay.c</FilePath>
-            </File>
-            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>sys.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\sys.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -400,24 +390,24 @@
           <GroupName>Driver</GroupName>
           <Files>
             <File>
-              <FileName>ad.c</FileName>
+              <FileName>gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Driver\ad.c</FilePath>
+              <FilePath>..\Driver\gpio.c</FilePath>
             </File>
             <File>
-              <FileName>dac.c</FileName>
+              <FileName>bstring.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Driver\dac.c</FilePath>
+              <FilePath>..\Driver\bstring.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\delay.c</FilePath>
             </File>
             <File>
               <FileName>flash.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Driver\flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Driver\gpio.c</FilePath>
             </File>
             <File>
               <FileName>mi2c.c</FileName>
@@ -430,19 +420,14 @@
               <FilePath>..\Driver\mspi.c</FilePath>
             </File>
             <File>
-              <FileName>pwm.c</FileName>
+              <FileName>usart1.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Driver\pwm.c</FilePath>
+              <FilePath>..\Driver\usart1.c</FilePath>
             </File>
             <File>
-              <FileName>tim.c</FileName>
+              <FileName>usart2.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Driver\tim.c</FilePath>
-            </File>
-            <File>
-              <FileName>usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Driver\usart.c</FilePath>
+              <FilePath>..\Driver\usart2.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -676,6 +661,154 @@
               <FileName>startup_stm32f40_41xxx.s</FileName>
               <FileType>2</FileType>
               <FilePath>..\User\Startup\startup_stm32f40_41xxx.s</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>ETH</GroupName>
+          <Files>
+            <File>
+              <FileName>stm32f4x7_eth.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ETH_Driver\src\stm32f4x7_eth.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>FatFs</GroupName>
+          <Files>
+            <File>
+              <FileName>diskio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Fatfs\src\diskio.c</FilePath>
+            </File>
+            <File>
+              <FileName>ff.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Fatfs\src\ff.c</FilePath>
+            </File>
+            <File>
+              <FileName>ffsystem.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Fatfs\src\ffsystem.c</FilePath>
+            </File>
+            <File>
+              <FileName>ffunicode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Fatfs\src\ffunicode.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>FatFsAPP</GroupName>
+          <Files>
+            <File>
+              <FileName>fatfsapp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FatfsAPP\fatfsapp.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>USB_Host</GroupName>
+          <Files>
+            <File>
+              <FileName>usbh_core.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_HOST\Core\src\usbh_core.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbh_hcs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_HOST\Core\src\usbh_hcs.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbh_ioreq.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_HOST\Core\src\usbh_ioreq.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbh_stdreq.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_HOST\Core\src\usbh_stdreq.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>USB_Device</GroupName>
+          <Files>
+            <File>
+              <FileName>usbd_core.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_Device\Core\src\usbd_core.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd_ioreq.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_Device\Core\src\usbd_ioreq.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd_req.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_Device\Core\src\usbd_req.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>USB_OTG</GroupName>
+          <Files>
+            <File>
+              <FileName>usb_core.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_OTG\src\usb_core.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_dcd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_OTG\src\usb_dcd.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_dcd_int.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_OTG\src\usb_dcd_int.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_hcd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_OTG\src\usb_hcd.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_hcd_int.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_OTG\src\usb_hcd_int.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>USB_Type</GroupName>
+        </Group>
+        <Group>
+          <GroupName>USB_Config</GroupName>
+          <Files>
+            <File>
+              <FileName>usb_bsp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_CONFIG\usb_bsp.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbh_usr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_CONFIG\usbh_usr.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd_usr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_CONFIG\usbd_usr.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd_desc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_CONFIG\usbd_desc.c</FilePath>
             </File>
           </Files>
         </Group>

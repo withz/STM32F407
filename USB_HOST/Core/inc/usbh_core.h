@@ -2,20 +2,20 @@
   ******************************************************************************
   * @file    usbh_core.h
   * @author  MCD Application Team
-  * @version V2.0.0
-  * @date    22-July-2011
+  * @version V2.2.1
+  * @date    17-March-2018
   * @brief   Header file for usbh_core.c
   ******************************************************************************
   * @attention
   *
-  * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
-  * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
-  * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
-  * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
-  * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
-  * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+  * <h2><center>&copy; Copyright (c) 2015 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * <h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                      <http://www.st.com/SLA0044>
+  *
   ******************************************************************************
   */ 
 
@@ -46,8 +46,22 @@
   * @{
   */ 
 
-#define MSC_CLASS                         0x08
-#define HID_CLASS                         0x03
+#define MSC_CLASS                             0x08 /* MSC */
+#define HID_CLASS                             0x03 /* HID */
+
+#define USB_AUDIO                             0x01 /* Audio */
+#define USB_CDCC                              0x02  /* Communications and CDC Control */
+#define USB_HID                               0x03  /* HID (Human Interface Device) */
+#define USB_PRINTER                           0x07  /* Printer */
+#define USB_MSC                               0x08  /* Mass Storage */
+#define USB_HUB                               0x09  /* Hub */
+#define USB_CDCD                              0x0A  /* CDC-Data */
+#define USB_SMARTCARD                         0x0B  /* Smart Card */
+#define USB_VIDEO                             0x0E  /* Video */
+#define USB_AVD                               0x10  /* Audio/Video Devices */
+
+
+
 #define MSC_PROTOCOL                      0x50
 #define CBI_PROTOCOL                      0x01
 
@@ -55,6 +69,7 @@
 #define USBH_MAX_ERROR_COUNT                            2
 #define USBH_DEVICE_ADDRESS_DEFAULT                     0
 #define USBH_DEVICE_ADDRESS                             1
+#define CFG_DESC_MAX_SIZE                               512
 
 
 /**
@@ -79,10 +94,9 @@ typedef enum {
 /* Following states are used for gState */
 typedef enum {
   HOST_IDLE =0,
-  HOST_ISSUE_CORE_RESET,
+  HOST_WAIT_PRT_ENABLED,
   HOST_DEV_ATTACHED,
   HOST_DEV_DISCONNECTED,  
-  HOST_ISSUE_RESET,
   HOST_DETECT_DEVICE_SPEED,
   HOST_ENUMERATION,
   HOST_CLASS_REQUEST,  
@@ -90,6 +104,7 @@ typedef enum {
   HOST_CTRL_XFER,
   HOST_USR_INPUT,
   HOST_SUSPENDED,
+  HOST_WAKEUP,
   HOST_ERROR_STATE  
 }HOST_State;  
 
@@ -122,7 +137,9 @@ typedef enum {
   CTRL_STATUS_IN_WAIT,
   CTRL_STATUS_OUT,
   CTRL_STATUS_OUT_WAIT,
-  CTRL_ERROR
+  CTRL_ERROR,
+  CTRL_STALLED,
+  CTRL_COMPLETE    
 }
 CTRL_State;  
 
@@ -178,9 +195,9 @@ typedef struct _USBH_Class_cb
   void         (*DeInit)\
     (USB_OTG_CORE_HANDLE *pdev , void *phost);
   USBH_Status  (*Requests)\
-    (USB_OTG_CORE_HANDLE *pdev , void *phost);  
+    (USB_OTG_CORE_HANDLE *pdev ,void *phost);  
   USBH_Status  (*Machine)\
-    (USB_OTG_CORE_HANDLE *pdev , void *phost);     
+    (USB_OTG_CORE_HANDLE *pdev, void *phost);     
   
 } USBH_Class_cb_TypeDef;
 
@@ -205,8 +222,8 @@ typedef struct _USBH_USR_PROP
   void (*SerialNumString)(void *);        /* SerialNubString*/
   void (*EnumerationDone)(void);           /* Enumeration finished */
   USBH_USR_Status (*UserInput)(void);
-  int (*USBH_USR_MSC_Application) (void);
-  void (*USBH_USR_DeviceNotSupported)(void); /* Device is not supported*/
+  int  (*UserApplication) (void);
+  void (*DeviceNotSupported)(void); /* Device is not supported*/
   void (*UnrecoveredError)(void);
 
 }
@@ -283,7 +300,7 @@ void USBH_ErrorHandle(USBH_HOST *phost,
 * @}
 */ 
 
-/******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
 
 
 

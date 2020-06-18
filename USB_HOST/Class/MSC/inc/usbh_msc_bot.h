@@ -2,20 +2,20 @@
   ******************************************************************************
   * @file    usbh_msc_bot.h
   * @author  MCD Application Team
-  * @version V2.0.0
-  * @date    22-July-2011
+  * @version V2.2.1
+  * @date    17-March-2018
   * @brief   Header file for usbh_msc_bot.c
   ******************************************************************************
   * @attention
   *
-  * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
-  * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
-  * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
-  * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
-  * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
-  * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+  * <h2><center>&copy; Copyright (c) 2015 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * <h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                      <http://www.st.com/SLA0044>
+  *
   ******************************************************************************
   */ 
 
@@ -159,7 +159,7 @@ typedef union _USBH_CSW_Block
 #define USB_REQ_GET_MAX_LUN              0xFE
 
 #define MAX_BULK_STALL_COUNT_LIMIT       0x04   /* If STALL is seen on Bulk 
-                                         Endpoint continously, this means 
+                                         Endpoint continuously, this means 
                                          that device and Host has phase error
                                          Hence a Reset is needed */
 
@@ -217,5 +217,5 @@ USBH_Status USBH_MSC_BOT_Abort(USB_OTG_CORE_HANDLE *pdev,
 /**
   * @}
   */
-/******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
 

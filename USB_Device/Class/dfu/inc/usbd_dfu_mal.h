@@ -2,20 +2,20 @@
   ******************************************************************************
   * @file    usbd_dfu_mal.h
   * @author  MCD Application Team
-  * @version V1.0.0
-  * @date    22-July-2011
+  * @version V1.2.1
+  * @date    17-March-2018
   * @brief   Header for usbd_dfu_mal.c file.
   ******************************************************************************
   * @attention
   *
-  * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
-  * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
-  * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
-  * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
-  * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
-  * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+  * <h2><center>&copy; Copyright (c) 2015 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * <h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                      <http://www.st.com/SLA0044>
+  *
   ******************************************************************************
   */
 
@@ -24,11 +24,7 @@
 #define __DFU_MAL_H
 
 /* Includes ------------------------------------------------------------------*/
-#ifdef STM32F2XX
- #include "stm32f2xx.h"
-#elif defined(STM32F10X_CL)
- #include "stm32f10x.h"
-#endif /* STM32F2XX */
+#include "usb_conf.h"
 
 #include "usbd_conf.h"
 #include "usbd_dfu_core.h"
@@ -53,7 +49,7 @@ DFU_MAL_Prop_TypeDef;
 #define MAL_OK                          0
 #define MAL_FAIL                        1
 
-/* utils macro ---------------------------------------------------------------*/
+/* useful macro ---------------------------------------------------------------*/
 #define _1st_BYTE(x)  (uint8_t)((x)&0xFF)             /* 1st addressing cycle */
 #define _2nd_BYTE(x)  (uint8_t)(((x)&0xFF00)>>8)      /* 2nd addressing cycle */
 #define _3rd_BYTE(x)  (uint8_t)(((x)&0xFF0000)>>16)   /* 3rd addressing cycle */
@@ -76,4 +72,4 @@ uint16_t MAL_GetStatus(uint32_t SectorAddress ,uint8_t Cmd, uint8_t *buffer);
 extern uint8_t  MAL_Buffer[XFERSIZE]; /* RAM Buffer for Downloaded Data */
 #endif /* __DFU_MAL_H */
 
-/******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

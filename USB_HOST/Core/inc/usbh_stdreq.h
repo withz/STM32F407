@@ -2,20 +2,20 @@
   ******************************************************************************
   * @file    usbh_stdreq.h
   * @author  MCD Application Team
-  * @version V2.0.0
-  * @date    22-July-2011
+  * @version V2.2.1
+  * @date    17-March-2018
   * @brief   Header file for usbh_stdreq.c
   ******************************************************************************
   * @attention
   *
-  * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
-  * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
-  * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
-  * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
-  * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
-  * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+  * <h2><center>&copy; Copyright (c) 2015 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * <h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                      <http://www.st.com/SLA0044>
+  *
   ******************************************************************************
   */ 
 
@@ -24,7 +24,6 @@
 #define __USBH_STDREQ_H
 
 /* Includes ------------------------------------------------------------------*/
-
 #include "usb_conf.h"
 #include "usb_hcd.h"
 #include "usbh_core.h"
@@ -82,6 +81,7 @@
 /** @defgroup USBH_STDREQ_Exported_Variables
   * @{
   */ 
+extern uint8_t USBH_CfgDesc[512];
 /**
   * @}
   */ 
@@ -122,9 +122,25 @@ USBH_Status USBH_ClrFeature(USB_OTG_CORE_HANDLE *pdev,
                             USBH_HOST           *phost,                             
                             uint8_t ep_num, uint8_t hc_num); 
 
+USBH_Status USBH_SetInterface(USB_OTG_CORE_HANDLE *pdev, 
+                        USBH_HOST *phost,
+                        uint8_t ep_num, uint8_t altSetting);
+
 USBH_Status USBH_Issue_ClrFeature(USB_OTG_CORE_HANDLE *pdev, 
                                   USBH_HOST           *phost, 
                                   uint8_t ep_num);
+
+USBH_DescHeader_t      *USBH_GetNextDesc (uint8_t   *pbuf, 
+                                                  uint16_t  *ptr);
+
+USBH_Status USBH_SetDeviceFeature(USB_OTG_CORE_HANDLE *pdev, 
+                                  USBH_HOST *phost,
+                                  uint8_t FeatureSelector, uint16_t wIndex);
+
+USBH_Status USBH_ClearDeviceFeature(USB_OTG_CORE_HANDLE *pdev, 
+                                    USBH_HOST *phost,
+                                    uint8_t FeatureSelector, uint16_t wIndex);
+
 /**
   * @}
   */ 
@@ -143,6 +159,6 @@ USBH_Status USBH_Issue_ClrFeature(USB_OTG_CORE_HANDLE *pdev,
 * @}
 */ 
 
-/******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
 
 

@@ -2,20 +2,20 @@
   ******************************************************************************
   * @file    usb_defines.h
   * @author  MCD Application Team
-  * @version V2.0.0
-  * @date    22-July-2011
+  * @version V2.2.1
+  * @date    17-March-2018
   * @brief   Header of the Core Layer
   ******************************************************************************
   * @attention
   *
-  * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
-  * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
-  * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
-  * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
-  * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
-  * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+  * <h2><center>&copy; Copyright (c) 2015 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * <h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                      <http://www.st.com/SLA0044>
+  *
   ******************************************************************************
   */
 
@@ -57,7 +57,6 @@
 
 #define USB_OTG_ULPI_PHY      1
 #define USB_OTG_EMBEDDED_PHY  2
-#define USB_OTG_I2C_PHY       3
 
 /**
   * @}
@@ -215,10 +214,10 @@ typedef enum
 /** @defgroup Internal_Macro's
   * @{
   */
-#define USB_OTG_READ_REG32(reg)  (*(__IO uint32_t *)reg)
-#define USB_OTG_WRITE_REG32(reg,value) (*(__IO uint32_t *)reg = value)
+#define USB_OTG_READ_REG32(reg)  (*(__IO uint32_t *)(reg))
+#define USB_OTG_WRITE_REG32(reg,value) (*(__IO uint32_t *)(reg) = (value))
 #define USB_OTG_MODIFY_REG32(reg,clear_mask,set_mask) \
-  USB_OTG_WRITE_REG32(reg, (((USB_OTG_READ_REG32(reg)) & ~clear_mask) | set_mask ) )
+  USB_OTG_WRITE_REG32((reg), (((USB_OTG_READ_REG32(reg)) & ~(clear_mask)) | (set_mask)) )
 
 /********************************************************************************
                               ENUMERATION TYPE
@@ -230,7 +229,7 @@ enum USB_OTG_SPEED {
   USB_SPEED_HIGH
 };
 
-#endif //__USB_DEFINES__H__
+#endif /* __USB_DEFINES__H__ */
 
 
 /**
@@ -240,5 +239,5 @@ enum USB_OTG_SPEED {
 /**
   * @}
   */ 
-/******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
 

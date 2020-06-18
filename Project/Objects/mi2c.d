@@ -35,3 +35,5 @@
 .\objects\mi2c.o: ..\Library\inc\stm32f4xx_dac.h
 .\objects\mi2c.o: ..\Library\inc\stm32f4xx_dcmi.h
 .\objects\mi2c.o: ..\Library\inc\stm32f4xx_fsmc.h
+.\objects\mi2c.o: ..\Driver\gpio.h
+.\objects\mi2c.o: ..\Driver\delay.h

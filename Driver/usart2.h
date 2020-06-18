@@ -1,8 +1,7 @@
-#ifndef __USART2_H__
-#define __USART2_H__
+#ifndef USART2_H
+#define USART2_H
 
 #include "stm32f4xx.h"
-#include "sys.h"
 
 void USART2_Configuration(void);
 void USART2_DMASendWords(u8 *c, int len);

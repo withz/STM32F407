@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file    usbh_msc_core.c
   * @author  MCD Application Team
-  * @version V2.0.0
-  * @date    22-July-2011
+  * @version V2.2.1
+  * @date    17-March-2018
   * @brief   This file implements the MSC class driver functions
   *          ===================================================================      
   *                                MSC Class  Description
@@ -20,15 +20,16 @@
   ******************************************************************************
   * @attention
   *
-  * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
-  * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
-  * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
-  * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
-  * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
-  * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+  * <h2><center>&copy; Copyright (c) 2015 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * <h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
-*/ 
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                      <http://www.st.com/SLA0044>
+  *
+  ******************************************************************************
+  */
 
 /* Includes ------------------------------------------------------------------*/
 
@@ -113,14 +114,13 @@ static USBH_Status USBH_MSC_InterfaceInit  (USB_OTG_CORE_HANDLE *pdev ,
 static void USBH_MSC_InterfaceDeInit  (USB_OTG_CORE_HANDLE *pdev , 
                                        void *phost);
 
-static USBH_Status USBH_MSC_Handle(USB_OTG_CORE_HANDLE *pdev , 
+static USBH_Status USBH_MSC_Handle(USB_OTG_CORE_HANDLE *pdev ,
+                                   
                             void *phost);
 
 static USBH_Status USBH_MSC_ClassRequest(USB_OTG_CORE_HANDLE *pdev , 
                                          void *phost);
 
-static USBH_Status USBH_MSC_BOTReset(USB_OTG_CORE_HANDLE *pdev,
-                              USBH_HOST *phost);
 static USBH_Status USBH_MSC_GETMaxLUN(USB_OTG_CORE_HANDLE *pdev,
                                USBH_HOST *phost);
 
@@ -215,7 +215,49 @@ static USBH_Status USBH_MSC_InterfaceInit ( USB_OTG_CORE_HANDLE *pdev,
   
   else
   {
-    pphost->usr_cb->USBH_USR_DeviceNotSupported(); 
+    if (pphost->device_prop.Itf_Desc[0].bInterfaceClass == USB_HUB)
+    {
+      LCD_ErrLog("Hub is not supported.\n");
+    }
+    
+    else if (pphost->device_prop.Itf_Desc[0].bInterfaceClass == USB_CDCC)
+    {
+      LCD_ErrLog("Communications and CDC Control device is not supported.\n");
+    }
+    
+    else if (pphost->device_prop.Itf_Desc[0].bInterfaceClass == USB_HID)
+    {
+      LCD_ErrLog("HID device is not supported.\n");
+    }
+    
+    else if (pphost->device_prop.Itf_Desc[0].bInterfaceClass == USB_PRINTER)
+    {
+      LCD_ErrLog("Printer device is not supported.\n");
+    }
+    
+    else if (pphost->device_prop.Itf_Desc[0].bInterfaceClass == USB_SMARTCARD)
+    {
+      LCD_ErrLog("Smart Card device is not supported.\n");
+    }
+    
+    
+    else if (pphost->device_prop.Itf_Desc[0].bInterfaceClass == USB_VIDEO)
+    {
+      LCD_ErrLog("Video device  is not supported.\n");
+    }
+    
+    
+    else if (pphost->device_prop.Itf_Desc[0].bInterfaceClass == USB_AVD)
+    {
+      LCD_ErrLog("Audio/Video Devices is not supported.\n");
+    }
+    
+    else
+    {
+      LCD_ErrLog ("The attached device is not supported. \n");
+    }
+    
+    pphost->usr_cb->DeviceNotSupported();
   }
   
   return USBH_OK ;
@@ -275,7 +317,7 @@ static USBH_Status USBH_MSC_ClassRequest(USB_OTG_CORE_HANDLE *pdev ,
   * @retval USBH_Status
   */
 
-static USBH_Status USBH_MSC_Handle(USB_OTG_CORE_HANDLE *pdev , 
+static USBH_Status USBH_MSC_Handle(USB_OTG_CORE_HANDLE *pdev ,
                                    void   *phost)
 {
   USBH_HOST *pphost = phost;
@@ -284,8 +326,8 @@ static USBH_Status USBH_MSC_Handle(USB_OTG_CORE_HANDLE *pdev ,
   uint8_t mscStatus = USBH_MSC_BUSY;
   uint8_t appliStatus = 0;
   
+ 
   static uint8_t maxLunExceed = FALSE;
-  
     
   if(HCD_IsDeviceConnected(pdev))
   {   
@@ -293,27 +335,9 @@ static USBH_Status USBH_MSC_Handle(USB_OTG_CORE_HANDLE *pdev ,
     {
     case USBH_MSC_BOT_INIT_STATE:
       USBH_MSC_Init(pdev);
-      USBH_MSC_BOTXferParam.MSCState = USBH_MSC_BOT_RESET;  
+      USBH_MSC_BOTXferParam.MSCState = USBH_MSC_GET_MAX_LUN;  
       break;
       
-    case USBH_MSC_BOT_RESET:   
-      /* Issue BOT RESET request */
-      status = USBH_MSC_BOTReset(pdev, phost);
-      if(status == USBH_OK )
-      {
-        USBH_MSC_BOTXferParam.MSCState = USBH_MSC_GET_MAX_LUN;
-      }
-      
-      if(status == USBH_NOT_SUPPORTED )
-      {
-       /* If the Command has failed, then we need to move to Next State, after
-        STALL condition is cleared by Control-Transfer */
-        USBH_MSC_BOTXferParam.MSCStateBkp = USBH_MSC_GET_MAX_LUN; 
-
-        /* a Clear Feature should be issued here */
-        USBH_MSC_BOTXferParam.MSCState = USBH_MSC_CTRL_ERROR_STATE;
-      }  
-      break;
       
     case USBH_MSC_GET_MAX_LUN:
       /* Issue GetMaxLUN request */
@@ -327,10 +351,11 @@ static USBH_Status USBH_MSC_Handle(USB_OTG_CORE_HANDLE *pdev ,
         if((MSC_Machine.maxLun > 0) && (maxLunExceed == FALSE))
         {
           maxLunExceed = TRUE;
-          pphost->usr_cb->USBH_USR_DeviceNotSupported();
+          pphost->usr_cb->DeviceNotSupported();
           
           break;
         }
+        
         USBH_MSC_BOTXferParam.MSCState = USBH_MSC_TEST_UNIT_READY;
       }
       
@@ -338,8 +363,7 @@ static USBH_Status USBH_MSC_Handle(USB_OTG_CORE_HANDLE *pdev ,
       {
                /* If the Command has failed, then we need to move to Next State, after
         STALL condition is cleared by Control-Transfer */
-        USBH_MSC_BOTXferParam.MSCStateBkp = USBH_MSC_TEST_UNIT_READY; 
-        
+        USBH_MSC_BOTXferParam.MSCStateBkp = USBH_MSC_TEST_UNIT_READY;        
         /* a Clear Feature should be issued here */
         USBH_MSC_BOTXferParam.MSCState = USBH_MSC_CTRL_ERROR_STATE;
       }    
@@ -361,13 +385,13 @@ static USBH_Status USBH_MSC_Handle(USB_OTG_CORE_HANDLE *pdev ,
       break;  
       
     case USBH_MSC_TEST_UNIT_READY:
-      /* Issue SCSI command TestUnitReady */ 
-      mscStatus = USBH_MSC_TestUnitReady(pdev);
-      
-      if(mscStatus == USBH_MSC_OK )
-      {
-        USBH_MSC_BOTXferParam.MSCState = USBH_MSC_READ_CAPACITY10;
-        MSCErrorCount = 0;
+         /* Issue SCSI command TestUnitReady */ 
+         mscStatus = USBH_MSC_TestUnitReady(pdev);
+
+         if(mscStatus == USBH_MSC_OK )
+         {
+           USBH_MSC_BOTXferParam.MSCState = USBH_MSC_READ_CAPACITY10;
+MSCErrorCount = 0;
         status = USBH_OK;
       }
       else
@@ -405,29 +429,15 @@ static USBH_Status USBH_MSC_Handle(USB_OTG_CORE_HANDLE *pdev ,
         USBH_MSC_ErrorHandle(mscStatus);
       }
       break;
-      
-    case USBH_MSC_REQUEST_SENSE:
-      /* Issue RequestSense SCSI command for retreiving error code */
-      mscStatus = USBH_MSC_RequestSense(pdev);
-      if(mscStatus == USBH_MSC_OK )
-      {
-        USBH_MSC_BOTXferParam.MSCState = USBH_MSC_BOTXferParam.MSCStateBkp;
-        status = USBH_OK;
-      }
-      else
-      {
-        USBH_MSC_ErrorHandle(mscStatus);
-      }  
-      break;
-      
+       
     case USBH_MSC_BOT_USB_TRANSFERS:
       /* Process the BOT state machine */
-      USBH_MSC_HandleBOTXfer(pdev , phost);
+      USBH_MSC_HandleBOTXfer(pdev,phost);
       break;
     
     case USBH_MSC_DEFAULT_APPLI_STATE:
       /* Process Application callback for MSC */
-      appliStatus = pphost->usr_cb->USBH_USR_MSC_Application();
+      appliStatus = pphost->usr_cb->UserApplication();
       if(appliStatus == 0)
       {
         USBH_MSC_BOTXferParam.MSCState = USBH_MSC_DEFAULT_APPLI_STATE;
@@ -444,6 +454,20 @@ static USBH_Status USBH_MSC_Handle(USB_OTG_CORE_HANDLE *pdev ,
       status = USBH_UNRECOVERED_ERROR;
       
       break;
+    
+    case USBH_MSC_REQUEST_SENSE:
+      /* Issue RequestSense SCSI command for retrieving error code */
+      mscStatus = USBH_MSC_RequestSense(pdev);
+      if(mscStatus == USBH_MSC_OK )
+      {
+        USBH_MSC_BOTXferParam.MSCState = USBH_MSC_BOTXferParam.MSCStateBkp;
+        status = USBH_OK;
+      }
+      else
+      {
+        USBH_MSC_ErrorHandle(mscStatus);
+      }  
+      break;
       
     default:
       break; 
@@ -451,31 +475,6 @@ static USBH_Status USBH_MSC_Handle(USB_OTG_CORE_HANDLE *pdev ,
     }
   }
    return status;
-}
-
-
-
-/**
-  * @brief  USBH_MSC_BOTReset
-  *         This request is used to reset the mass storage device and its 
-  *         associated interface. This class-specific request shall ready the 
-  *         device for the next CBW from the host.
-  * @param  pdev: Selected device
-  * @retval USBH_Status : Status of class request handled.
-  */
-static USBH_Status USBH_MSC_BOTReset(USB_OTG_CORE_HANDLE *pdev,
-                              USBH_HOST *phost)
-{
-  
-  phost->Control.setup.b.bmRequestType = USB_H2D | USB_REQ_TYPE_CLASS | \
-                              USB_REQ_RECIPIENT_INTERFACE;
-  
-  phost->Control.setup.b.bRequest = USB_REQ_BOT_RESET;
-  phost->Control.setup.b.wValue.w = 0;
-  phost->Control.setup.b.wIndex.w = 0;
-  phost->Control.setup.b.wLength.w = 0;           
-  
-  return USBH_CtlReq(pdev, phost, 0 , 0 ); 
 }
 
 
@@ -502,7 +501,7 @@ static USBH_Status USBH_MSC_GETMaxLUN(USB_OTG_CORE_HANDLE *pdev , USBH_HOST *pho
 
 /**
   * @brief  USBH_MSC_ErrorHandle 
-  *         The function is for handling errors occuring during the MSC
+  *         The function is for handling errors occurring during the MSC
   *         state machine   
   * @param  status
   * @retval None
@@ -527,7 +526,7 @@ void USBH_MSC_ErrorHandle(uint8_t status)
     } 
     else if(status == USBH_MSC_PHASE_ERROR)
     {
-      /* Phase error, Go to Unrecoovered state */
+      /* Phase error, Go to Unrecovered state */
       USBH_MSC_BOTXferParam.MSCState = USBH_MSC_UNRECOVERED_STATE;
     }
     else if(status == USBH_MSC_BUSY)
@@ -556,4 +555,4 @@ void USBH_MSC_ErrorHandle(uint8_t status)
   * @}
   */
 
-/******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

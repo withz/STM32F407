@@ -2,20 +2,20 @@
   ******************************************************************************
   * @file    usbd_usr.h
   * @author  MCD Application Team
-  * @version V1.0.0
-  * @date    22-July-2011
+  * @version V1.2.1
+  * @date    17-March-2018
   * @brief   Header file for usbd_usr.c
   ******************************************************************************
   * @attention
   *
-  * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
-  * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
-  * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
-  * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
-  * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
-  * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+  * <h2><center>&copy; Copyright (c) 2015 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * <h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                      <http://www.st.com/SLA0044>
+  *
   ******************************************************************************
   */ 
 
@@ -24,8 +24,7 @@
 #define __USBD_USR_H__
 
 /* Includes ------------------------------------------------------------------*/
-#include "usbd_core.h"
-
+#include "usbd_ioreq.h"
 
 /** @addtogroup USBD_USER
   * @{
@@ -45,7 +44,7 @@
   * @{
   */ 
 
-extern  USBD_Usr_cb_TypeDef USR_cb;
+extern  USBD_Usr_cb_TypeDef USBD_USR_cb;
 extern  USBD_Usr_cb_TypeDef USR_FS_cb;
 extern  USBD_Usr_cb_TypeDef USR_HS_cb;
 
@@ -128,8 +127,4 @@ void     USBD_USR_HS_DeviceDisconnected(void);
   * @}
   */ 
 
-/******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
-
-
-
-
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

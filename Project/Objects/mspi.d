@@ -35,3 +35,5 @@
 .\objects\mspi.o: ..\Library\inc\stm32f4xx_dac.h
 .\objects\mspi.o: ..\Library\inc\stm32f4xx_dcmi.h
 .\objects\mspi.o: ..\Library\inc\stm32f4xx_fsmc.h
+.\objects\mspi.o: ..\Driver\gpio.h
+.\objects\mspi.o: ..\Driver\delay.h
