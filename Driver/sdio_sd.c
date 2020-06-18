@@ -223,7 +223,7 @@
   */ 
 
 /* Includes ------------------------------------------------------------------*/
-#include "bsp_sdio_sd.h"
+#include "sdio_sd.h"
 
 
 /** @addtogroup Utilities

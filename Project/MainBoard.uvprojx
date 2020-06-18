@@ -429,10 +429,27 @@
               <FileType>1</FileType>
               <FilePath>..\Driver\usart2.c</FilePath>
             </File>
+            <File>
+              <FileName>sdio_sd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\sdio_sd.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Device</GroupName>
+          <Files>
+            <File>
+              <FileName>sram.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\sram.c</FilePath>
+            </File>
+            <File>
+              <FileName>sdcard.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\sdcard.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>Library</GroupName>
@@ -706,6 +723,11 @@
               <FileName>fatfsapp.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\FatfsAPP\fatfsapp.c</FilePath>
+            </File>
+            <File>
+              <FileName>fatfsbase.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FatfsAPP\fatfsbase.c</FilePath>
             </File>
           </Files>
         </Group>

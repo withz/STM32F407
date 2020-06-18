@@ -3,7 +3,7 @@
 .\objects\diskio.o: ..\Fatfs\inc\ffconf.h
 .\objects\diskio.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\diskio.o: ..\Fatfs\inc\diskio.h
-.\objects\diskio.o: ..\FatfsAPP\fatfsapp.h
+.\objects\diskio.o: ..\FatfsAPP\fatfsbase.h
 .\objects\diskio.o: ..\System\stm32f4xx.h
 .\objects\diskio.o: ..\System\core_cm4.h
 .\objects\diskio.o: ..\System\core_cmInstr.h

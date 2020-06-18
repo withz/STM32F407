@@ -2,18 +2,14 @@
 #define _SDCARD_H_
 
 #include "stm32f4xx.h"
-#include "sys.h"
-#include "delay.h"
+#include <stdlib.h>
+#include <string.h>
 
-#include "bsp_sdio_sd.h"
-#include "malloc.h"
-#include "string.h"
+#include "delay.h"
+#include "sdio_sd.h"
 
 #include "diskio.h"
-#include "ff.h"
-#include "exfuns.h"
 
-#include "settingfile.h"
 
 u8  SD_write_command(u8 command, u32 arg, u8 crc);
 

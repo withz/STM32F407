@@ -41,3 +41,7 @@
 .\objects\main.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\main.o: ..\Driver\delay.h
 .\objects\main.o: ..\Driver\bstring.h
+.\objects\main.o: ..\FatfsAPP\fatfsapp.h
+.\objects\main.o: ..\Fatfs\inc\ff.h
+.\objects\main.o: ..\Fatfs\inc\ffconf.h
+.\objects\main.o: ..\Device\sram.h

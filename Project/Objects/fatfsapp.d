@@ -37,4 +37,5 @@
 .\objects\fatfsapp.o: ..\Library\inc\stm32f4xx_fsmc.h
 .\objects\fatfsapp.o: ..\Fatfs\inc\ff.h
 .\objects\fatfsapp.o: ..\Fatfs\inc\ffconf.h
-.\objects\fatfsapp.o: ..\Fatfs\inc\diskio.h
+.\objects\fatfsapp.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\fatfsapp.o: ..\Driver\usart1.h
