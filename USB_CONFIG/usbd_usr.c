@@ -123,6 +123,18 @@ void USBD_USR_Init(void)
 */
 void USBD_USR_DeviceReset(uint8_t speed)
 {
+    switch (speed)
+	{
+		case USB_OTG_SPEED_HIGH:
+			//printf("USB Device Library v1.1.0  [HS]\r\n");
+			break; 
+		case USB_OTG_SPEED_FULL: 
+			//printf("USB Device Library v1.1.0  [FS]\r\n");
+			break;
+		default:
+			//printf("USB Device Library v1.1.0  [??]\r\n"); 
+			break;
+	}
 }
 
 
@@ -133,7 +145,7 @@ void USBD_USR_DeviceReset(uint8_t speed)
 */
 void USBD_USR_DeviceConfigured(void)
 {
-
+    //usbx.bDeviceState|=0X80;
 }
 
 /**
@@ -143,7 +155,7 @@ void USBD_USR_DeviceConfigured(void)
 */
 void USBD_USR_DeviceSuspended(void)
 {
-
+    //usbx.bDeviceState=0;
 }
 
 
@@ -166,7 +178,7 @@ void USBD_USR_DeviceResumed(void)
 */
 void USBD_USR_DeviceConnected(void)
 {
- 
+    
 }
 
 
@@ -178,7 +190,7 @@ void USBD_USR_DeviceConnected(void)
 */
 void USBD_USR_DeviceDisconnected(void)
 {
-
+    //usbx.bDeviceState=0;
 }
 
 /**

@@ -9,6 +9,9 @@
 extern "C" {
 #endif
 
+#include "fatfsbase.h"
+#include "ff.h"			/* Obtains integer types */ 
+
 /* Status of Disk Functions */
 typedef BYTE	DSTATUS;
 

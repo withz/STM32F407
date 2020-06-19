@@ -22,8 +22,7 @@
 /* Includes ------------------------------------------------------------------ */
 #include <string.h>
 #include "usbh_usr.h"
-#include "ff.h"                 /* FATFS */
-
+#include "usb_app.h"
 
 /** @addtogroup USBH_USER
 * @{
@@ -67,13 +66,7 @@ extern USB_OTG_CORE_HANDLE USB_OTG_Core;
 /** @defgroup USBH_USR_Private_Variables
 * @{
 */
-uint8_t USBH_USR_ApplicationState = USH_USR_FS_INIT;
-uint8_t filenameString[15] = { 0 };
 
-FATFS fatfs;
-FIL file;
-uint8_t Image_Buf[IMAGE_BUFFER_SIZE];
-uint8_t line_idx = 0;
 
 /* Points to the DEVICE_PROP structure of current device */
 /* The purpose of this register is to speed up the execution */
@@ -107,22 +100,6 @@ USBH_Usr_cb_TypeDef USBH_USR_cb = {
 * @{
 */
 /*--------------- LCD Messages ---------------*/
-uint8_t MSG_HOST_INIT[] = "> Host Library Initialized\n";
-uint8_t MSG_DEV_ATTACHED[] = "> Device Attached \n";
-uint8_t MSG_DEV_DISCONNECTED[] = "> Device Disconnected\n";
-uint8_t MSG_DEV_ENUMERATED[] = "> Enumeration completed \n";
-uint8_t MSG_DEV_HIGHSPEED[] = "> High speed device detected\n";
-uint8_t MSG_DEV_FULLSPEED[] = "> Full speed device detected\n";
-uint8_t MSG_DEV_LOWSPEED[] = "> Low speed device detected\n";
-uint8_t MSG_DEV_ERROR[] = "> Device fault \n";
-
-uint8_t MSG_MSC_CLASS[] = "> Mass storage device connected\n";
-uint8_t MSG_HID_CLASS[] = "> HID device connected\n";
-uint8_t MSG_DISK_SIZE[] = "> Size of the disk in MBytes: \n";
-uint8_t MSG_LUN[] = "> LUN Available in the device:\n";
-uint8_t MSG_ROOT_CONT[] = "> Exploring disk flash ...\n";
-uint8_t MSG_WR_PROTECT[] = "> The disk is write protected\n";
-uint8_t MSG_UNREC_ERROR[] = "> UNRECOVERED ERROR STATE\n";
 
 /**
 * @}
@@ -132,10 +109,7 @@ uint8_t MSG_UNREC_ERROR[] = "> UNRECOVERED ERROR STATE\n";
 /** @defgroup USBH_USR_Private_FunctionPrototypes
 * @{
 */
-static uint8_t Explore_Disk(char *path, uint8_t recu_level);
-static uint8_t Image_Browser(char *path);
-static void Show_Image(void);
-static void Toggle_Leds(void);
+
 /**
 * @}
 */
@@ -154,6 +128,10 @@ static void Toggle_Leds(void);
 */
 void USBH_USR_Init(void)
 {
+    USB_OTG_GINTMSK_TypeDef intmsk;
+	intmsk.d32=USB_OTG_READ_REG32(&USB_OTG_Core_dev.regs.GREGS->GINTMSK);
+	intmsk.b.usbsuspend=0;	//关闭挂起中断 
+	USB_OTG_WRITE_REG32(&USB_OTG_Core_dev.regs.GREGS->GINTMSK,intmsk.d32); 
 
 }
 
@@ -211,7 +189,22 @@ void USBH_USR_ResetDevice(void)
 */
 void USBH_USR_DeviceSpeedDetected(uint8_t DeviceSpeed)
 {
-
+    if(DeviceSpeed==HPRT0_PRTSPD_HIGH_SPEED)
+	{
+		//printf("高速(HS)USB设备!\r\n");
+ 	}  
+	else if(DeviceSpeed==HPRT0_PRTSPD_FULL_SPEED)
+	{
+		//printf("全速(FS)USB设备!\r\n"); 
+	}
+	else if(DeviceSpeed==HPRT0_PRTSPD_LOW_SPEED)
+	{
+		//printf("低速(LS)USB设备!\r\n");  
+	}
+	else
+	{
+		//printf("设备错误!\r\n");  
+	}
 }
 
 /**
@@ -222,7 +215,8 @@ void USBH_USR_DeviceSpeedDetected(uint8_t DeviceSpeed)
 */
 void USBH_USR_Device_DescAvailable(void *DeviceDesc)
 {
-
+    USBH_DevDesc_TypeDef *hs;
+	hs=DeviceDesc; 
 }
 
 /**
@@ -233,7 +227,7 @@ void USBH_USR_Device_DescAvailable(void *DeviceDesc)
 */
 void USBH_USR_DeviceAddressAssigned(void)
 {
-
+    
 }
 
 
@@ -247,7 +241,15 @@ void USBH_USR_Configuration_DescAvailable(USBH_CfgDesc_TypeDef * cfgDesc,
                                           USBH_InterfaceDesc_TypeDef * itfDesc,
                                           USBH_EpDesc_TypeDef * epDesc)
 {
-
+    USBH_InterfaceDesc_TypeDef *id; 
+	id = itfDesc;   
+	if((*id).bInterfaceClass==0x08)
+	{
+		//printf("可移动存储器设备!\r\n"); 
+	}else if((*id).bInterfaceClass==0x03)
+	{
+		//printf("HID 设备!\r\n"); 
+	}
 }
 
 /**
@@ -369,7 +371,7 @@ static void Toggle_Leds(void)
 */
 void USBH_USR_DeInit(void)
 {
-  USBH_USR_ApplicationState = USH_USR_FS_INIT;
+
 }
 
 

@@ -1,9 +1,12 @@
 #ifndef FATFSBASE_H
 #define FATFSBASE_H
 
-#include "stm32f4xx.h"
+
 #include "ff.h"	
 #include "diskio.h"
+#include "stdlib.h"
+#include "sdio_sd.h"
+#include "sram.h"
 
 DWORD get_fattime(void);
 int RAM_disk_status(void);

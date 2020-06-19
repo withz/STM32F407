@@ -1,9 +1,12 @@
 .\objects\diskio.o: ..\Fatfs\src\diskio.c
+.\objects\diskio.o: ..\Fatfs\inc\diskio.h
+.\objects\diskio.o: ..\FatfsAPP\fatfsbase.h
 .\objects\diskio.o: ..\Fatfs\inc\ff.h
 .\objects\diskio.o: ..\Fatfs\inc\ffconf.h
 .\objects\diskio.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\diskio.o: ..\Fatfs\inc\diskio.h
-.\objects\diskio.o: ..\FatfsAPP\fatfsbase.h
+.\objects\diskio.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\diskio.o: ..\Driver\sdio_sd.h
 .\objects\diskio.o: ..\System\stm32f4xx.h
 .\objects\diskio.o: ..\System\core_cm4.h
 .\objects\diskio.o: ..\System\core_cmInstr.h
@@ -38,3 +41,4 @@
 .\objects\diskio.o: ..\Library\inc\stm32f4xx_dac.h
 .\objects\diskio.o: ..\Library\inc\stm32f4xx_dcmi.h
 .\objects\diskio.o: ..\Library\inc\stm32f4xx_fsmc.h
+.\objects\diskio.o: ..\Device\sram.h

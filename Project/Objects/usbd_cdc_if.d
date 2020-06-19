@@ -1,5 +1,6 @@
-.\objects\usbd_cdc_if.o: ..\USB_CONFIG\usbd_cdc_if.c
-.\objects\usbd_cdc_if.o: ..\USB_CONFIG\usbd_cdc_if.h
+.\objects\usbd_cdc_if.o: ..\USB_DEV_CDC\src\usbd_cdc_if.c
+.\objects\usbd_cdc_if.o: ..\USB_DEV_CDC\inc\usbd_cdc_if.h
+.\objects\usbd_cdc_if.o: ..\USB_CONFIG\usb_conf.h
 .\objects\usbd_cdc_if.o: ..\System\stm32f4xx.h
 .\objects\usbd_cdc_if.o: ..\System\core_cm4.h
 .\objects\usbd_cdc_if.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -36,8 +37,7 @@
 .\objects\usbd_cdc_if.o: ..\Library\inc\stm32f4xx_dcmi.h
 .\objects\usbd_cdc_if.o: ..\Library\inc\stm32f4xx_fsmc.h
 .\objects\usbd_cdc_if.o: ..\USB_CONFIG\usbd_conf.h
-.\objects\usbd_cdc_if.o: ..\USB_CONFIG\usb_conf.h
-.\objects\usbd_cdc_if.o: ..\USB_Device\Class\cdc\inc\usbd_cdc_core.h
+.\objects\usbd_cdc_if.o: ..\USB_DEV_CDC\inc\usbd_cdc_core.h
 .\objects\usbd_cdc_if.o: ..\USB_Device\Core\inc\usbd_ioreq.h
 .\objects\usbd_cdc_if.o: ..\USB_Device\Core\inc\usbd_def.h
 .\objects\usbd_cdc_if.o: ..\USB_Device\Core\inc\usbd_core.h

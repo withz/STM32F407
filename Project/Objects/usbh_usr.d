@@ -47,3 +47,14 @@
 .\objects\usbh_usr.o: ..\USB_HOST\Core\inc\usbh_def.h
 .\objects\usbh_usr.o: ..\USB_CONFIG\usbh_conf.h
 .\objects\usbh_usr.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\usbh_usr.o: ..\USB_CONFIG\usb_app.h
+.\objects\usbh_usr.o: ..\USB_OTG\inc\usb_hcd_int.h
+.\objects\usbh_usr.o: ..\USB_OTG\inc\usb_dcd_int.h
+.\objects\usbh_usr.o: ..\USB_OTG\inc\usb_dcd.h
+.\objects\usbh_usr.o: ..\USB_Device\Core\inc\usbd_usr.h
+.\objects\usbh_usr.o: ..\USB_Device\Core\inc\usbd_ioreq.h
+.\objects\usbh_usr.o: ..\USB_Device\Core\inc\usbd_def.h
+.\objects\usbh_usr.o: ..\USB_CONFIG\usbd_conf.h
+.\objects\usbh_usr.o: ..\USB_Device\Core\inc\usbd_core.h
+.\objects\usbh_usr.o: ..\USB_CONFIG\usbd_desc.h
+.\objects\usbh_usr.o: ..\USB_Device\Core\inc\usbd_req.h

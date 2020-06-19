@@ -7,10 +7,9 @@
 /* storage control modules to the FatFs module with a defined API.       */
 /*-----------------------------------------------------------------------*/
 
-#include "ff.h"			/* Obtains integer types */
+
 #include "diskio.h"		/* Declarations of disk functions */
 
-#include "fatfsbase.h"
 
 /* Definitions of physical drive number for each drive */
 #define DEV_RAM		0	/* Example: Map Ramdisk to physical drive 0 */
@@ -96,6 +95,8 @@ DSTATUS disk_initialize (
 
 		// translate the reslut code here
         switch(result){
+            case 1: stat = RES_ERROR;
+                break;
             case 0:
             default: stat = RES_OK;
                 break;

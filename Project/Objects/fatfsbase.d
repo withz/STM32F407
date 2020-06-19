@@ -1,8 +1,14 @@
 .\objects\fatfsbase.o: ..\FatfsAPP\fatfsbase.c
 .\objects\fatfsbase.o: ..\FatfsAPP\fatfsbase.h
+.\objects\fatfsbase.o: ..\Fatfs\inc\ff.h
+.\objects\fatfsbase.o: ..\Fatfs\inc\ffconf.h
+.\objects\fatfsbase.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\fatfsbase.o: ..\Fatfs\inc\diskio.h
+.\objects\fatfsbase.o: ..\FatfsAPP\fatfsbase.h
+.\objects\fatfsbase.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\fatfsbase.o: ..\Driver\sdio_sd.h
 .\objects\fatfsbase.o: ..\System\stm32f4xx.h
 .\objects\fatfsbase.o: ..\System\core_cm4.h
-.\objects\fatfsbase.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\fatfsbase.o: ..\System\core_cmInstr.h
 .\objects\fatfsbase.o: ..\System\core_cmFunc.h
 .\objects\fatfsbase.o: ..\System\core_cmSimd.h
@@ -35,9 +41,4 @@
 .\objects\fatfsbase.o: ..\Library\inc\stm32f4xx_dac.h
 .\objects\fatfsbase.o: ..\Library\inc\stm32f4xx_dcmi.h
 .\objects\fatfsbase.o: ..\Library\inc\stm32f4xx_fsmc.h
-.\objects\fatfsbase.o: ..\Fatfs\inc\ff.h
-.\objects\fatfsbase.o: ..\Fatfs\inc\ffconf.h
-.\objects\fatfsbase.o: ..\Fatfs\inc\diskio.h
-.\objects\fatfsbase.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\fatfsbase.o: ..\Device\sram.h
-.\objects\fatfsbase.o: ..\Driver\usart1.h

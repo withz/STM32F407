@@ -335,7 +335,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F40_41xxx,ARM_MATH_CM4</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Device;..\Driver;..\Library\inc;..\User;..\User\Startup;..\System;..\ETH_Driver\inc;..\Fatfs\inc;..\USB_Device\Core\inc;..\USB_HOST\Core\inc;..\USB_OTG\inc;..\USB_Device\Class\cdc\inc;..\USB_CONFIG;..\FatfsAPP</IncludePath>
+              <IncludePath>..\Device;..\Driver;..\Library\inc;..\User;..\User\Startup;..\System;..\ETH_Driver\inc;..\Fatfs\inc;..\USB_Device\Core\inc;..\USB_HOST\Core\inc;..\USB_OTG\inc;..\USB_Device\Class\cdc\inc;..\USB_CONFIG;..\FatfsAPP;..\DSP_LIB\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -434,6 +434,11 @@
               <FileType>1</FileType>
               <FilePath>..\Driver\sdio_sd.c</FilePath>
             </File>
+            <File>
+              <FileName>rng.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\rng.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -443,11 +448,6 @@
               <FileName>sram.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Device\sram.c</FilePath>
-            </File>
-            <File>
-              <FileName>sdcard.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Device\sdcard.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -679,6 +679,11 @@
               <FileType>2</FileType>
               <FilePath>..\User\Startup\startup_stm32f40_41xxx.s</FilePath>
             </File>
+            <File>
+              <FileName>arm_cortexM4lf_math.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\DSP_LIB\arm_cortexM4lf_math.lib</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -831,6 +836,11 @@
               <FileName>usbd_desc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\USB_CONFIG\usbd_desc.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_app.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USB_CONFIG\usb_app.c</FilePath>
             </File>
           </Files>
         </Group>
