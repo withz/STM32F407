@@ -13,6 +13,7 @@
 
 #include "sram.h"
 #include "sdio_sd.h"
+#include "usb_app.h"
 
 #include "ff.h"	
 #include "fatfsapp.h"

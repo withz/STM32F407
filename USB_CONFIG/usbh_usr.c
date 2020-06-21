@@ -215,8 +215,8 @@ void USBH_USR_DeviceSpeedDetected(uint8_t DeviceSpeed)
 */
 void USBH_USR_Device_DescAvailable(void *DeviceDesc)
 {
-    USBH_DevDesc_TypeDef *hs;
-	hs=DeviceDesc; 
+//    USBH_DevDesc_TypeDef *hs;
+//	hs=DeviceDesc; 
 }
 
 /**
@@ -319,7 +319,7 @@ void USBH_USR_DeviceNotSupported(void)
 */
 USBH_USR_Status USBH_USR_UserInput(void)
 {
-
+    return USBH_USR_RESP_OK;
 }
 
 /**
@@ -342,26 +342,11 @@ void USBH_USR_OverCurrentDetected(void)
 */
 int USBH_USR_MSC_Application(void)
 {
-
+    return 0;
 }
 
 
 
-void delay(__IO uint32_t nCount)
-{
-
-}
-
-/**
-* @brief  Toggle_Leds
-*         Toggle leds to shows user input state
-* @param  None
-* @retval None
-*/
-static void Toggle_Leds(void)
-{
-
-}
 
 /**
 * @brief  USBH_USR_DeInit

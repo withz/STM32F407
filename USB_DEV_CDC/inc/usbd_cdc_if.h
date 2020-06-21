@@ -20,8 +20,8 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __USBD_CDC_IF_TEMPLATE_H
-#define __USBD_CDC_IF_TEMPLATE_H
+#ifndef __USBD_CDC_IF_H
+#define __USBD_CDC_IF_H
 
 /* Includes ------------------------------------------------------------------*/
 #include "usb_conf.h"
@@ -31,7 +31,7 @@
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 
-extern CDC_IF_Prop_TypeDef  TEMPLATE_fops;
+extern CDC_IF_Prop_TypeDef  VCP_fops;
 
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */

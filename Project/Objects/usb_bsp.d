@@ -1,4 +1,7 @@
 .\objects\usb_bsp.o: ..\USB_CONFIG\usb_bsp.c
+.\objects\usb_bsp.o: ..\USB_OTG\inc\usb_bsp.h
+.\objects\usb_bsp.o: ..\USB_OTG\inc\usb_core.h
+.\objects\usb_bsp.o: ..\USB_CONFIG\usb_conf.h
 .\objects\usb_bsp.o: ..\System\stm32f4xx.h
 .\objects\usb_bsp.o: ..\System\core_cm4.h
 .\objects\usb_bsp.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -34,8 +37,5 @@
 .\objects\usb_bsp.o: ..\Library\inc\stm32f4xx_dac.h
 .\objects\usb_bsp.o: ..\Library\inc\stm32f4xx_dcmi.h
 .\objects\usb_bsp.o: ..\Library\inc\stm32f4xx_fsmc.h
-.\objects\usb_bsp.o: ..\USB_OTG\inc\usb_bsp.h
-.\objects\usb_bsp.o: ..\USB_OTG\inc\usb_core.h
-.\objects\usb_bsp.o: ..\USB_CONFIG\usb_conf.h
 .\objects\usb_bsp.o: ..\USB_OTG\inc\usb_regs.h
 .\objects\usb_bsp.o: ..\USB_OTG\inc\usb_defines.h

@@ -63,7 +63,7 @@ int USB_disk_status(void)
 
 int RAM_disk_write(const BYTE *buff, LBA_t sector, UINT count)
 {
-    u32 i, j;
+    u32 i;
     for(i=0;i<count;i++){
         FSMC_SRAM_WriteBuffer((u8*)buff, (sector+i)*512, 512);
     }
@@ -96,7 +96,7 @@ int USB_disk_write(const BYTE *buff, LBA_t sector, UINT count)
 
 int RAM_disk_read(BYTE *buff, LBA_t sector, UINT count)
 {
-    u32 i, j;
+    u32 i;
     for(i=0;i<count;i++){
         FSMC_SRAM_ReadBuffer(buff, (sector+i)*512, 512);
     }

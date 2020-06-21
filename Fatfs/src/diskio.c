@@ -257,16 +257,25 @@ DRESULT disk_ioctl (
 
 	switch (pdrv) {
 	case DEV_RAM :
-        res = RAM_disk_ioctl(pdrv, cmd, buff);
+        result = RAM_disk_ioctl(pdrv, cmd, buff);
 		// Process of the command for the RAM drive
+        if(result == 0){
+            res = RES_OK;
+        }
 		return res;
 	case DEV_MMC :
-        res = MMC_disk_ioctl(pdrv, cmd, buff);
+        result = MMC_disk_ioctl(pdrv, cmd, buff);
 		// Process of the command for the MMC/SD card
+        if(result == 0){
+            res = RES_OK;
+        }
 		return res;
 	case DEV_USB :
-        res = USB_disk_ioctl(pdrv, cmd, buff);
+        result = USB_disk_ioctl(pdrv, cmd, buff);
 		// Process of the command the USB drive
+        if(result == 0){
+            res = RES_OK;
+        }
 		return res;
 	}
 

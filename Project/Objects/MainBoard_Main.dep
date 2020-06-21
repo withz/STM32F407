@@ -1,6 +1,6 @@
 Dependencies for Project 'MainBoard', Target 'Main': (DO NOT MODIFY !)
-F (..\User\main.c)(0x5EEC76BA)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-I (..\User\main.h)(0x5EEC76BA)
+F (..\User\main.c)(0x5EEDD3E3)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (..\User\main.h)(0x5EEDD152)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -43,8 +43,27 @@ I (..\Driver\bstring.h)(0x5EE6E6C5)
 I (..\Driver\gpio.h)(0x5EE6F5FA)
 I (..\Device\sram.h)(0x5EEC6E72)
 I (..\Driver\sdio_sd.h)(0x5EEC3E56)
+I (..\USB_CONFIG\usb_app.h)(0x5EEEB785)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
+I (..\USB_OTG\inc\usb_hcd_int.h)(0x5B8FE0D0)
+I (..\USB_OTG\inc\usb_hcd.h)(0x5B8FE0D0)
+I (..\USB_OTG\inc\usb_regs.h)(0x5B8FE0D0)
+I (..\USB_OTG\inc\usb_core.h)(0x5B8FE0D0)
+I (..\USB_OTG\inc\usb_defines.h)(0x5B8FE0D0)
+I (..\USB_OTG\inc\usb_dcd_int.h)(0x5B8FE0D0)
+I (..\USB_OTG\inc\usb_dcd.h)(0x5B8FE0D0)
+I (..\USB_CONFIG\usbh_usr.h)(0x5EEAEDAD)
 I (..\Fatfs\inc\ff.h)(0x5DCDF373)
 I (..\Fatfs\inc\ffconf.h)(0x5EEC4AEE)
+I (..\USB_HOST\Core\inc\usbh_core.h)(0x5B8FE0D0)
+I (..\USB_HOST\Core\inc\usbh_def.h)(0x5B8FE0D0)
+I (..\USB_CONFIG\usbh_conf.h)(0x5EEAEBF8)
+I (d:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\USB_Device\Core\inc\usbd_usr.h)(0x5EEAEDAD)
+I (..\USB_Device\Core\inc\usbd_ioreq.h)(0x5B8FE0D0)
+I (..\USB_Device\Core\inc\usbd_def.h)(0x5B8FE0D0)
+I (..\USB_CONFIG\usbd_conf.h)(0x5EEDD6E9)
+I (..\USB_Device\Core\inc\usbd_core.h)(0x5B8FE0D0)
 I (..\FatfsAPP\fatfsapp.h)(0x5EEC9247)
 I (d:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
 F (..\Driver\gpio.c)(0x5EE6FA1E)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\gpio.o --omf_browse .\objects\gpio.crf --depend .\objects\gpio.d)
@@ -1963,7 +1982,7 @@ I (..\Library\inc\stm32f4xx_can.h)(0x5821F050)
 I (..\Library\inc\stm32f4xx_dac.h)(0x581CC67B)
 I (..\Library\inc\stm32f4xx_dcmi.h)(0x581CC67B)
 I (..\Library\inc\stm32f4xx_fsmc.h)(0x581CC67B)
-F (..\User\Startup\startup_stm32f40_41xxx.s)(0x5EEB0FF3)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 523" --pd "STM32F407xx SETA 1"--list .\listings\startup_stm32f40_41xxx.lst --xref -o .\objects\startup_stm32f40_41xxx.o --depend .\objects\startup_stm32f40_41xxx.d)
+F (..\User\Startup\startup_stm32f40_41xxx.s)(0x5EEDD704)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 523" --pd "STM32F407xx SETA 1"--list .\listings\startup_stm32f40_41xxx.lst --xref -o .\objects\startup_stm32f40_41xxx.o --depend .\objects\startup_stm32f40_41xxx.d)
 F (..\DSP_LIB\arm_cortexM4lf_math.lib)(0x5821A2F8)()
 F (..\ETH_Driver\src\stm32f4x7_eth.c)(0x4EC0F5EA)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\stm32f4x7_eth.o --omf_browse .\objects\stm32f4x7_eth.crf --depend .\objects\stm32f4x7_eth.d)
 I (..\ETH_Driver\inc\stm32f4x7_eth.h)(0x4EC0F5EA)
@@ -2003,7 +2022,7 @@ I (..\Library\inc\stm32f4xx_dac.h)(0x581CC67B)
 I (..\Library\inc\stm32f4xx_dcmi.h)(0x581CC67B)
 I (..\Library\inc\stm32f4xx_fsmc.h)(0x581CC67B)
 I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
-F (..\Fatfs\src\diskio.c)(0x5EEC9246)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\diskio.o --omf_browse .\objects\diskio.crf --depend .\objects\diskio.d)
+F (..\Fatfs\src\diskio.c)(0x5EEDD3E6)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\diskio.o --omf_browse .\objects\diskio.crf --depend .\objects\diskio.d)
 I (..\Fatfs\inc\diskio.h)(0x5EEC9247)
 I (..\FatfsAPP\fatfsbase.h)(0x5EEC9247)
 I (..\Fatfs\inc\ff.h)(0x5DCDF373)
@@ -2095,13 +2114,13 @@ F (..\Fatfs\src\ffunicode.c)(0x5DCDF373)(--c99 -c --cpu Cortex-M4.fp -g -O0 --ap
 I (..\Fatfs\inc\ff.h)(0x5DCDF373)
 I (..\Fatfs\inc\ffconf.h)(0x5EEC4AEE)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
-F (..\FatfsAPP\fatfsapp.c)(0x5EEC9247)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\fatfsapp.o --omf_browse .\objects\fatfsapp.crf --depend .\objects\fatfsapp.d)
+F (..\FatfsAPP\fatfsapp.c)(0x5EEDD3E6)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\fatfsapp.o --omf_browse .\objects\fatfsapp.crf --depend .\objects\fatfsapp.d)
 I (..\FatfsAPP\fatfsapp.h)(0x5EEC9247)
 I (..\Fatfs\inc\ff.h)(0x5DCDF373)
 I (..\Fatfs\inc\ffconf.h)(0x5EEC4AEE)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
 I (d:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
-F (..\FatfsAPP\fatfsbase.c)(0x5EEC9247)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\fatfsbase.o --omf_browse .\objects\fatfsbase.crf --depend .\objects\fatfsbase.d)
+F (..\FatfsAPP\fatfsbase.c)(0x5EEDD3E6)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\fatfsbase.o --omf_browse .\objects\fatfsbase.crf --depend .\objects\fatfsbase.d)
 I (..\FatfsAPP\fatfsbase.h)(0x5EEC9247)
 I (..\Fatfs\inc\ff.h)(0x5DCDF373)
 I (..\Fatfs\inc\ffconf.h)(0x5EEC4AEE)
@@ -2145,7 +2164,7 @@ I (..\Library\inc\stm32f4xx_fsmc.h)(0x581CC67B)
 I (..\Device\sram.h)(0x5EEC6E72)
 F (..\USB_HOST\Core\src\usbh_core.c)(0x5EEAECF2)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usbh_core.o --omf_browse .\objects\usbh_core.crf --depend .\objects\usbh_core.d)
 I (..\USB_HOST\Core\inc\usbh_ioreq.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -2196,7 +2215,7 @@ I (..\USB_HOST\Core\inc\usbh_hcs.h)(0x5B8FE0D0)
 I (..\USB_HOST\Core\inc\usbh_core.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_hcd.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_regs.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -2237,7 +2256,7 @@ I (..\USB_HOST\Core\inc\usbh_def.h)(0x5B8FE0D0)
 I (..\USB_CONFIG\usbh_conf.h)(0x5EEAEBF8)
 F (..\USB_HOST\Core\src\usbh_ioreq.c)(0x5B8FE0EF)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usbh_ioreq.o --omf_browse .\objects\usbh_ioreq.crf --depend .\objects\usbh_ioreq.d)
 I (..\USB_HOST\Core\inc\usbh_ioreq.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -2281,7 +2300,7 @@ I (..\USB_HOST\Core\inc\usbh_def.h)(0x5B8FE0D0)
 I (..\USB_CONFIG\usbh_conf.h)(0x5EEAEBF8)
 F (..\USB_HOST\Core\src\usbh_stdreq.c)(0x5B8FE0EF)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usbh_stdreq.o --omf_browse .\objects\usbh_stdreq.crf --depend .\objects\usbh_stdreq.d)
 I (..\USB_HOST\Core\inc\usbh_ioreq.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -2328,7 +2347,7 @@ F (..\USB_Device\Core\src\usbd_core.c)(0x5B8FE0EF)(--c99 -c --cpu Cortex-M4.fp -
 I (..\USB_Device\Core\inc\usbd_core.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_dcd.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_core.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -2366,7 +2385,7 @@ I (..\Library\inc\stm32f4xx_fsmc.h)(0x581CC67B)
 I (..\USB_OTG\inc\usb_regs.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_defines.h)(0x5B8FE0D0)
 I (..\USB_Device\Core\inc\usbd_def.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usbd_conf.h)(0x5EEAED6A)
+I (..\USB_CONFIG\usbd_conf.h)(0x5EEDD6E9)
 I (..\USB_Device\Core\inc\usbd_req.h)(0x5B8FE0D0)
 I (..\USB_Device\Core\inc\usbd_ioreq.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_dcd_int.h)(0x5B8FE0D0)
@@ -2374,8 +2393,8 @@ I (..\USB_OTG\inc\usb_bsp.h)(0x5B8FE0D0)
 F (..\USB_Device\Core\src\usbd_ioreq.c)(0x5B8FE0EF)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usbd_ioreq.o --omf_browse .\objects\usbd_ioreq.crf --depend .\objects\usbd_ioreq.d)
 I (..\USB_Device\Core\inc\usbd_ioreq.h)(0x5B8FE0D0)
 I (..\USB_Device\Core\inc\usbd_def.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usbd_conf.h)(0x5EEAED6A)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usbd_conf.h)(0x5EEDD6E9)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -2418,8 +2437,8 @@ I (..\USB_OTG\inc\usb_defines.h)(0x5B8FE0D0)
 F (..\USB_Device\Core\src\usbd_req.c)(0x5B8FFE1C)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usbd_req.o --omf_browse .\objects\usbd_req.crf --depend .\objects\usbd_req.d)
 I (..\USB_Device\Core\inc\usbd_req.h)(0x5B8FE0D0)
 I (..\USB_Device\Core\inc\usbd_def.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usbd_conf.h)(0x5EEAED6A)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usbd_conf.h)(0x5EEDD6E9)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -2461,9 +2480,9 @@ I (..\USB_OTG\inc\usb_regs.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_defines.h)(0x5B8FE0D0)
 I (..\USB_Device\Core\inc\usbd_ioreq.h)(0x5B8FE0D0)
 I (..\USB_CONFIG\usbd_desc.h)(0x5B8FDEB2)
-F (..\USB_OTG\src\usb_core.c)(0x5B8FFE7E)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usb_core.o --omf_browse .\objects\usb_core.crf --depend .\objects\usb_core.d)
+F (..\USB_OTG\src\usb_core.c)(0x5EEDBF59)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usb_core.o --omf_browse .\objects\usb_core.crf --depend .\objects\usb_core.d)
 I (..\USB_OTG\inc\usb_core.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -2504,7 +2523,7 @@ I (..\USB_OTG\inc\usb_bsp.h)(0x5B8FE0D0)
 F (..\USB_OTG\src\usb_dcd.c)(0x5B8FE0EE)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usb_dcd.o --omf_browse .\objects\usb_dcd.crf --depend .\objects\usb_dcd.d)
 I (..\USB_OTG\inc\usb_dcd.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_core.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -2546,7 +2565,7 @@ F (..\USB_OTG\src\usb_dcd_int.c)(0x5B8FE0EE)(--c99 -c --cpu Cortex-M4.fp -g -O0 
 I (..\USB_OTG\inc\usb_dcd_int.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_dcd.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_core.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -2585,7 +2604,7 @@ I (..\USB_OTG\inc\usb_regs.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_defines.h)(0x5B8FE0D0)
 F (..\USB_OTG\src\usb_hcd.c)(0x5B8FE0EE)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usb_hcd.o --omf_browse .\objects\usb_hcd.crf --depend .\objects\usb_hcd.d)
 I (..\USB_OTG\inc\usb_core.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -2626,7 +2645,7 @@ I (..\USB_OTG\inc\usb_hcd.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_bsp.h)(0x5B8FE0D0)
 F (..\USB_OTG\src\usb_hcd_int.c)(0x5BB22368)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usb_hcd_int.o --omf_browse .\objects\usb_hcd_int.crf --depend .\objects\usb_hcd_int.d)
 I (..\USB_OTG\inc\usb_core.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -2665,12 +2684,12 @@ I (..\USB_OTG\inc\usb_regs.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_defines.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_hcd_int.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_hcd.h)(0x5B8FE0D0)
-F (..\USB_DEV_CDC\src\usbd_cdc_core.c)(0x5B8FE0EF)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usbd_cdc_core.o --omf_browse .\objects\usbd_cdc_core.crf --depend .\objects\usbd_cdc_core.d)
-I (..\USB_DEV_CDC\inc\usbd_cdc_core.h)(0x5B8FE0D0)
+F (..\USB_DEV_CDC\src\usbd_cdc_core.c)(0x5EEDBFF7)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usbd_cdc_core.o --omf_browse .\objects\usbd_cdc_core.crf --depend .\objects\usbd_cdc_core.d)
+I (..\USB_DEV_CDC\inc\usbd_cdc_core.h)(0x5EED748B)
 I (..\USB_Device\Core\inc\usbd_ioreq.h)(0x5B8FE0D0)
 I (..\USB_Device\Core\inc\usbd_def.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usbd_conf.h)(0x5EEAED6A)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usbd_conf.h)(0x5EEDD6E9)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -2712,12 +2731,9 @@ I (..\USB_OTG\inc\usb_regs.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_defines.h)(0x5B8FE0D0)
 I (..\USB_CONFIG\usbd_desc.h)(0x5B8FDEB2)
 I (..\USB_Device\Core\inc\usbd_req.h)(0x5B8FE0D0)
-F (..\USB_DEV_CDC\src\usbd_cdc_core_loopback.c)(0x5B8FE0EF)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usbd_cdc_core_loopback.o --omf_browse .\objects\usbd_cdc_core_loopback.crf --depend .\objects\usbd_cdc_core_loopback.d)
-I (..\USB_DEV_CDC\inc\usbd_cdc_core_loopback.h)(0x5B8FE0D0)
-I (..\USB_Device\Core\inc\usbd_ioreq.h)(0x5B8FE0D0)
-I (..\USB_Device\Core\inc\usbd_def.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usbd_conf.h)(0x5EEAED6A)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+F (..\USB_DEV_CDC\src\usbd_cdc_if.c)(0x5EED76D7)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usbd_cdc_if.o --omf_browse .\objects\usbd_cdc_if.crf --depend .\objects\usbd_cdc_if.d)
+I (..\USB_DEV_CDC\inc\usbd_cdc_if.h)(0x5EED7CA6)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -2752,52 +2768,8 @@ I (..\Library\inc\stm32f4xx_can.h)(0x5821F050)
 I (..\Library\inc\stm32f4xx_dac.h)(0x581CC67B)
 I (..\Library\inc\stm32f4xx_dcmi.h)(0x581CC67B)
 I (..\Library\inc\stm32f4xx_fsmc.h)(0x581CC67B)
-I (..\USB_Device\Core\inc\usbd_core.h)(0x5B8FE0D0)
-I (..\USB_OTG\inc\usb_dcd.h)(0x5B8FE0D0)
-I (..\USB_OTG\inc\usb_core.h)(0x5B8FE0D0)
-I (..\USB_OTG\inc\usb_regs.h)(0x5B8FE0D0)
-I (..\USB_OTG\inc\usb_defines.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usbd_desc.h)(0x5B8FDEB2)
-I (..\USB_Device\Core\inc\usbd_req.h)(0x5B8FE0D0)
-F (..\USB_DEV_CDC\src\usbd_cdc_if.c)(0x5EEC9246)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usbd_cdc_if.o --omf_browse .\objects\usbd_cdc_if.crf --depend .\objects\usbd_cdc_if.d)
-I (..\USB_DEV_CDC\inc\usbd_cdc_if.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
-I (..\System\stm32f4xx.h)(0x5EE6F9C1)
-I (..\System\core_cm4.h)(0x581CC64D)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
-I (..\System\core_cmInstr.h)(0x581CC64D)
-I (..\System\core_cmFunc.h)(0x581CC64D)
-I (..\System\core_cmSimd.h)(0x581CC64D)
-I (..\System\system_stm32f4xx.h)(0x582097AB)
-I (..\User\stm32f4xx_conf.h)(0x58221742)
-I (..\Library\inc\stm32f4xx_adc.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_crc.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_dbgmcu.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_dma.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_exti.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_flash.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_gpio.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_i2c.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_iwdg.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_pwr.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_rcc.h)(0x58234D93)
-I (..\Library\inc\stm32f4xx_rtc.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_sdio.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_spi.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_syscfg.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_tim.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_usart.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_wwdg.h)(0x581CC67B)
-I (..\Library\inc\misc.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_cryp.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_hash.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_rng.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_can.h)(0x5821F050)
-I (..\Library\inc\stm32f4xx_dac.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_dcmi.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_fsmc.h)(0x581CC67B)
-I (..\USB_CONFIG\usbd_conf.h)(0x5EEAED6A)
-I (..\USB_DEV_CDC\inc\usbd_cdc_core.h)(0x5B8FE0D0)
+I (..\USB_CONFIG\usbd_conf.h)(0x5EEDD6E9)
+I (..\USB_DEV_CDC\inc\usbd_cdc_core.h)(0x5EED748B)
 I (..\USB_Device\Core\inc\usbd_ioreq.h)(0x5B8FE0D0)
 I (..\USB_Device\Core\inc\usbd_def.h)(0x5B8FE0D0)
 I (..\USB_Device\Core\inc\usbd_core.h)(0x5B8FE0D0)
@@ -2805,9 +2777,9 @@ I (..\USB_OTG\inc\usb_dcd.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_core.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_regs.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_defines.h)(0x5B8FE0D0)
-F (..\USB_CONFIG\usb_app.c)(0x5EEC8C23)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usb_app.o --omf_browse .\objects\usb_app.crf --depend .\objects\usb_app.d)
-I (..\USB_CONFIG\usb_app.h)(0x5EEC8B58)
-I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+F (..\USB_CONFIG\usb_app.c)(0x5EEEB785)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usb_app.o --omf_browse .\objects\usb_app.crf --depend .\objects\usb_app.d)
+I (..\USB_CONFIG\usb_app.h)(0x5EEEB785)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -2842,7 +2814,6 @@ I (..\Library\inc\stm32f4xx_can.h)(0x5821F050)
 I (..\Library\inc\stm32f4xx_dac.h)(0x581CC67B)
 I (..\Library\inc\stm32f4xx_dcmi.h)(0x581CC67B)
 I (..\Library\inc\stm32f4xx_fsmc.h)(0x581CC67B)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
 I (..\USB_OTG\inc\usb_hcd_int.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_hcd.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_regs.h)(0x5B8FE0D0)
@@ -2860,51 +2831,54 @@ I (d:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
 I (..\USB_Device\Core\inc\usbd_usr.h)(0x5EEAEDAD)
 I (..\USB_Device\Core\inc\usbd_ioreq.h)(0x5B8FE0D0)
 I (..\USB_Device\Core\inc\usbd_def.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usbd_conf.h)(0x5EEAED6A)
+I (..\USB_CONFIG\usbd_conf.h)(0x5EEDD6E9)
 I (..\USB_Device\Core\inc\usbd_core.h)(0x5B8FE0D0)
+I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
 I (..\USB_CONFIG\usbd_desc.h)(0x5B8FDEB2)
 I (..\USB_Device\Core\inc\usbd_req.h)(0x5B8FE0D0)
-F (..\USB_CONFIG\usb_bsp.c)(0x5EEC8B58)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usb_bsp.o --omf_browse .\objects\usb_bsp.crf --depend .\objects\usb_bsp.d)
-I (..\System\stm32f4xx.h)(0x5EE6F9C1)
-I (..\System\core_cm4.h)(0x581CC64D)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
-I (..\System\core_cmInstr.h)(0x581CC64D)
-I (..\System\core_cmFunc.h)(0x581CC64D)
-I (..\System\core_cmSimd.h)(0x581CC64D)
-I (..\System\system_stm32f4xx.h)(0x582097AB)
-I (..\User\stm32f4xx_conf.h)(0x58221742)
-I (..\Library\inc\stm32f4xx_adc.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_crc.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_dbgmcu.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_dma.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_exti.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_flash.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_gpio.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_i2c.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_iwdg.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_pwr.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_rcc.h)(0x58234D93)
-I (..\Library\inc\stm32f4xx_rtc.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_sdio.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_spi.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_syscfg.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_tim.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_usart.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_wwdg.h)(0x581CC67B)
-I (..\Library\inc\misc.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_cryp.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_hash.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_rng.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_can.h)(0x5821F050)
-I (..\Library\inc\stm32f4xx_dac.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_dcmi.h)(0x581CC67B)
-I (..\Library\inc\stm32f4xx_fsmc.h)(0x581CC67B)
+I (..\USB_DEV_CDC\inc\usbd_cdc_if.h)(0x5EED7CA6)
+I (..\USB_DEV_CDC\inc\usbd_cdc_core.h)(0x5EED748B)
+F (..\USB_CONFIG\usb_bsp.c)(0x5EEEB730)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usb_bsp.o --omf_browse .\objects\usb_bsp.crf --depend .\objects\usb_bsp.d)
 I (..\USB_OTG\inc\usb_bsp.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_core.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
+I (..\System\stm32f4xx.h)(0x5EE6F9C1)
+I (..\System\core_cm4.h)(0x581CC64D)
+I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (..\System\core_cmInstr.h)(0x581CC64D)
+I (..\System\core_cmFunc.h)(0x581CC64D)
+I (..\System\core_cmSimd.h)(0x581CC64D)
+I (..\System\system_stm32f4xx.h)(0x582097AB)
+I (..\User\stm32f4xx_conf.h)(0x58221742)
+I (..\Library\inc\stm32f4xx_adc.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_crc.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_dbgmcu.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_dma.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_exti.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_flash.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_gpio.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_i2c.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_iwdg.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_pwr.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_rcc.h)(0x58234D93)
+I (..\Library\inc\stm32f4xx_rtc.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_sdio.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_spi.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_syscfg.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_tim.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_usart.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_wwdg.h)(0x581CC67B)
+I (..\Library\inc\misc.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_cryp.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_hash.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_rng.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_can.h)(0x5821F050)
+I (..\Library\inc\stm32f4xx_dac.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_dcmi.h)(0x581CC67B)
+I (..\Library\inc\stm32f4xx_fsmc.h)(0x581CC67B)
 I (..\USB_OTG\inc\usb_regs.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_defines.h)(0x5B8FE0D0)
-F (..\USB_CONFIG\usbh_usr.c)(0x5EEC8B73)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usbh_usr.o --omf_browse .\objects\usbh_usr.crf --depend .\objects\usbh_usr.d)
+F (..\USB_CONFIG\usbh_usr.c)(0x5EEEB730)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usbh_usr.o --omf_browse .\objects\usbh_usr.crf --depend .\objects\usbh_usr.d)
 I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
 I (..\USB_CONFIG\usbh_usr.h)(0x5EEAEDAD)
 I (..\Fatfs\inc\ff.h)(0x5DCDF373)
@@ -2913,7 +2887,7 @@ I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
 I (..\USB_HOST\Core\inc\usbh_core.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_hcd.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_regs.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (..\System\core_cmInstr.h)(0x581CC64D)
@@ -2952,23 +2926,21 @@ I (..\USB_OTG\inc\usb_defines.h)(0x5B8FE0D0)
 I (..\USB_HOST\Core\inc\usbh_def.h)(0x5B8FE0D0)
 I (..\USB_CONFIG\usbh_conf.h)(0x5EEAEBF8)
 I (d:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
-I (..\USB_CONFIG\usb_app.h)(0x5EEC8B58)
+I (..\USB_CONFIG\usb_app.h)(0x5EEEB785)
 I (..\USB_OTG\inc\usb_hcd_int.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_dcd_int.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_dcd.h)(0x5B8FE0D0)
 I (..\USB_Device\Core\inc\usbd_usr.h)(0x5EEAEDAD)
 I (..\USB_Device\Core\inc\usbd_ioreq.h)(0x5B8FE0D0)
 I (..\USB_Device\Core\inc\usbd_def.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usbd_conf.h)(0x5EEAED6A)
+I (..\USB_CONFIG\usbd_conf.h)(0x5EEDD6E9)
 I (..\USB_Device\Core\inc\usbd_core.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usbd_desc.h)(0x5B8FDEB2)
-I (..\USB_Device\Core\inc\usbd_req.h)(0x5B8FE0D0)
 F (..\USB_CONFIG\usbd_usr.c)(0x5EEC8B58)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usbd_usr.o --omf_browse .\objects\usbd_usr.crf --depend .\objects\usbd_usr.d)
 I (..\USB_Device\Core\inc\usbd_usr.h)(0x5EEAEDAD)
 I (..\USB_Device\Core\inc\usbd_ioreq.h)(0x5B8FE0D0)
 I (..\USB_Device\Core\inc\usbd_def.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usbd_conf.h)(0x5EEAED6A)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usbd_conf.h)(0x5EEDD6E9)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -3009,12 +2981,12 @@ I (..\USB_OTG\inc\usb_core.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_regs.h)(0x5B8FE0D0)
 I (..\USB_OTG\inc\usb_defines.h)(0x5B8FE0D0)
 I (d:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
-F (..\USB_CONFIG\usbd_desc.c)(0x5B8FDEA3)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usbd_desc.o --omf_browse .\objects\usbd_desc.crf --depend .\objects\usbd_desc.d)
+F (..\USB_CONFIG\usbd_desc.c)(0x5EED7CA5)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Device -I ..\Driver -I ..\Library\inc -I ..\User -I ..\User\Startup -I ..\System -I ..\ETH_Driver\inc -I ..\Fatfs\inc -I ..\FatfsAPP -I ..\USB_Device\Core\inc -I ..\USB_HOST\Core\inc -I ..\USB_OTG\inc -I ..\USB_CONFIG -I ..\DSP_LIB\Include -I ..\USB_DEV_CDC\inc-I.\RTE\_Main-Id:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-Id:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -DARM_MATH_CM4-o .\objects\usbd_desc.o --omf_browse .\objects\usbd_desc.crf --depend .\objects\usbd_desc.d)
 I (..\USB_CONFIG\usbd_desc.h)(0x5B8FDEB2)
 I (..\USB_Device\Core\inc\usbd_req.h)(0x5B8FE0D0)
 I (..\USB_Device\Core\inc\usbd_def.h)(0x5B8FE0D0)
-I (..\USB_CONFIG\usbd_conf.h)(0x5EEAED6A)
-I (..\USB_CONFIG\usb_conf.h)(0x5EEAEB60)
+I (..\USB_CONFIG\usbd_conf.h)(0x5EEDD6E9)
+I (..\USB_CONFIG\usb_conf.h)(0x5EEDCD50)
 I (..\System\stm32f4xx.h)(0x5EE6F9C1)
 I (..\System\core_cm4.h)(0x581CC64D)
 I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)

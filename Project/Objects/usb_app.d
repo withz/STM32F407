@@ -1,6 +1,6 @@
 .\objects\usb_app.o: ..\USB_CONFIG\usb_app.c
 .\objects\usb_app.o: ..\USB_CONFIG\usb_app.h
-.\objects\usb_app.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\usb_app.o: ..\USB_CONFIG\usb_conf.h
 .\objects\usb_app.o: ..\System\stm32f4xx.h
 .\objects\usb_app.o: ..\System\core_cm4.h
 .\objects\usb_app.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -36,7 +36,6 @@
 .\objects\usb_app.o: ..\Library\inc\stm32f4xx_dac.h
 .\objects\usb_app.o: ..\Library\inc\stm32f4xx_dcmi.h
 .\objects\usb_app.o: ..\Library\inc\stm32f4xx_fsmc.h
-.\objects\usb_app.o: ..\USB_CONFIG\usb_conf.h
 .\objects\usb_app.o: ..\USB_OTG\inc\usb_hcd_int.h
 .\objects\usb_app.o: ..\USB_OTG\inc\usb_hcd.h
 .\objects\usb_app.o: ..\USB_OTG\inc\usb_regs.h
@@ -56,5 +55,8 @@
 .\objects\usb_app.o: ..\USB_Device\Core\inc\usbd_def.h
 .\objects\usb_app.o: ..\USB_CONFIG\usbd_conf.h
 .\objects\usb_app.o: ..\USB_Device\Core\inc\usbd_core.h
+.\objects\usb_app.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\usb_app.o: ..\USB_CONFIG\usbd_desc.h
 .\objects\usb_app.o: ..\USB_Device\Core\inc\usbd_req.h
+.\objects\usb_app.o: ..\USB_DEV_CDC\inc\usbd_cdc_if.h
+.\objects\usb_app.o: ..\USB_DEV_CDC\inc\usbd_cdc_core.h

@@ -56,5 +56,3 @@
 .\objects\usbh_usr.o: ..\USB_Device\Core\inc\usbd_def.h
 .\objects\usbh_usr.o: ..\USB_CONFIG\usbd_conf.h
 .\objects\usbh_usr.o: ..\USB_Device\Core\inc\usbd_core.h
-.\objects\usbh_usr.o: ..\USB_CONFIG\usbd_desc.h
-.\objects\usbh_usr.o: ..\USB_Device\Core\inc\usbd_req.h

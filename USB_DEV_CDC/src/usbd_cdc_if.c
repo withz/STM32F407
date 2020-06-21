@@ -27,8 +27,6 @@
 #include "usbd_cdc_if.h"
 
 /* Private typedef -----------------------------------------------------------*/
-#define APP_RX_DATA_SIZE    512
-
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
@@ -42,19 +40,19 @@ extern uint32_t APP_Rx_ptr_in;    /* Increment this pointer or roll it back to
                                      in the buffer APP_Rx_Buffer. */
 
 /* Private function prototypes -----------------------------------------------*/
-static uint16_t TEMPLATE_Init     (void);
-static uint16_t TEMPLATE_DeInit   (void);
-static uint16_t TEMPLATE_Ctrl     (uint32_t Cmd, uint8_t* Buf, uint32_t Len);
-static uint16_t TEMPLATE_DataTx   (uint8_t* Buf, uint32_t Len);
-static uint16_t TEMPLATE_DataRx (uint8_t* Buf, uint32_t Len);
+static uint16_t VCP_Init     (void);
+static uint16_t VCP_DeInit   (void);
+static uint16_t VCP_Ctrl     (uint32_t Cmd, uint8_t* Buf, uint32_t Len);
+static uint16_t VCP_DataTx   (uint8_t* Buf, uint32_t Len);
+static uint16_t VCP_DataRx (uint8_t* Buf, uint32_t Len);
 
-CDC_IF_Prop_TypeDef TEMPLATE_fops = 
+CDC_IF_Prop_TypeDef VCP_fops = 
 {
-  TEMPLATE_Init,
-  TEMPLATE_DeInit,
-  TEMPLATE_Ctrl,
-  TEMPLATE_DataTx,
-  TEMPLATE_DataRx
+  VCP_Init,
+  VCP_DeInit,
+  VCP_Ctrl,
+  VCP_DataTx,
+  VCP_DataRx
 };
 
 /* Private functions ---------------------------------------------------------*/
@@ -65,7 +63,7 @@ CDC_IF_Prop_TypeDef TEMPLATE_fops =
   * @param  None
   * @retval Result of the operation: USBD_OK if all operations are OK else USBD_FAIL
   */
-static uint16_t TEMPLATE_Init(void)
+static uint16_t VCP_Init(void)
 {
   /*
      Add your initialization code here 
@@ -79,7 +77,7 @@ static uint16_t TEMPLATE_Init(void)
   * @param  None
   * @retval Result of the operation: USBD_OK if all operations are OK else USBD_FAIL
   */
-static uint16_t TEMPLATE_DeInit(void)
+static uint16_t VCP_DeInit(void)
 {
   /*
      Add your deinitialization code here 
@@ -96,7 +94,7 @@ static uint16_t TEMPLATE_DeInit(void)
   * @param  Len: Number of data to be sent (in bytes)
   * @retval Result of the operation: USBD_OK if all operations are OK else USBD_FAIL
   */
-static uint16_t TEMPLATE_Ctrl (uint32_t Cmd, uint8_t* Buf, uint32_t Len)
+static uint16_t VCP_Ctrl (uint32_t Cmd, uint8_t* Buf, uint32_t Len)
 { 
   switch (Cmd)
   {
@@ -151,7 +149,7 @@ static uint16_t TEMPLATE_Ctrl (uint32_t Cmd, uint8_t* Buf, uint32_t Len)
   * @param  Len: Number of data to be sent (in bytes)
   * @retval Result of the operation: USBD_OK if all operations are OK else USBD_FAIL
   */
-static uint16_t TEMPLATE_DataTx (uint8_t* Buf, uint32_t Len)
+static uint16_t VCP_DataTx (uint8_t* Buf, uint32_t Len)
 {
   u32 i;
   /* Get the data to be sent */
@@ -187,7 +185,7 @@ static uint16_t TEMPLATE_DataTx (uint8_t* Buf, uint32_t Len)
   * @param  Len: Number of data received (in bytes)
   * @retval Result of the opeartion: USBD_OK if all operations are OK else USBD_FAIL
   */
-static uint16_t TEMPLATE_DataRx (uint8_t* Buf, uint32_t Len)
+static uint16_t VCP_DataRx (uint8_t* Buf, uint32_t Len)
 {
   uint32_t i;
   
