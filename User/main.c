@@ -1,5 +1,9 @@
 #include "main.h"
 
+u8 debug[100];
+u32 pdebug=0;
+
+
 
 int main(void)
 {

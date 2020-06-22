@@ -40,7 +40,7 @@
   * @{
   */ 
 #define USB_CDC_CONFIG_DESC_SIZ                (67)
-#define USB_CDC_DESC_SIZ                       (67-9)
+#define USB_CDC_DESC_SIZ                       67//(67-9)
 
 #define DEVICE_CLASS_CDC                        0x02
 #define DEVICE_SUBCLASS_CDC                     0x00

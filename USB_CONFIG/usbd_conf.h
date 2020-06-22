@@ -30,10 +30,12 @@
   * @{
   */ 
 #define USBD_CFG_MAX_NUM           1
+#define USBD_ITF_MAX_NUM           4
+
 #define USB_MAX_STR_DESC_SIZ       64 
 #define USBD_EP0_MAX_PACKET_SIZE   64
 
-#define USBD_ITF_MAX_NUM           4
+
 
 #define USBD_SELF_POWERED
 
@@ -49,7 +51,7 @@
 #define CDC_CMD_EP                      0x82  /* EP2 for CDC commands */
 
 #ifdef USE_USB_OTG_HS
- #define CDC_DATA_MAX_PACKET_SIZE       1024  /* Endpoint IN & OUT Packet size */
+ #define CDC_DATA_MAX_PACKET_SIZE       64   /* Endpoint IN & OUT Packet size */
  #define CDC_CMD_PACKET_SZE             8    /* Control Endpoint Packet size */
 
  #define CDC_IN_FRAME_INTERVAL          40   /* Number of micro-frames between IN transfers */

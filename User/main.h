@@ -20,6 +20,8 @@
 
 #include <stdlib.h>
 
+extern u8 debug[];
+extern u32 pdebug;
 
 #endif
 

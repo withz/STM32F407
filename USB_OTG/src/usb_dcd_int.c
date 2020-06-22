@@ -486,10 +486,10 @@ static uint32_t DCD_HandleOutEP_ISR(USB_OTG_CORE_HANDLE *pdev)
   uint32_t epnum = 0;
   
   doepint.d32 = 0;
-  
+   
   /* Read in the device interrupt bits */
   ep_intr = USB_OTG_ReadDevAllOutEp_itr(pdev);
-  
+
   while ( ep_intr )
   {
     if (ep_intr&0x1)

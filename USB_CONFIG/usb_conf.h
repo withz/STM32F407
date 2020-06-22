@@ -52,7 +52,7 @@
 *  when FS core is used.
 *******************************************************************************/
 #ifndef USE_USB_OTG_FS
- //#define USE_USB_OTG_FS
+ #define USE_USB_OTG_FS
 #endif /* USE_USB_OTG_FS */
 
 #ifdef USE_USB_OTG_FS 
@@ -77,7 +77,7 @@
 *     STM32 device datasheet.
 *******************************************************************************/
 #ifndef USE_USB_OTG_HS
- #define USE_USB_OTG_HS
+ //#define USE_USB_OTG_HS
 #endif /* USE_USB_OTG_HS */
 
 #ifndef USE_ULPI_PHY
@@ -85,7 +85,7 @@
 #endif /* USE_ULPI_PHY */
 
 #ifndef USE_EMBEDDED_PHY
- #define USE_EMBEDDED_PHY
+ //#define USE_EMBEDDED_PHY
 #endif /* USE_EMBEDDED_PHY */
 
 #ifdef USE_USB_OTG_HS 
@@ -148,8 +148,8 @@
 /****************** USB OTG HS CONFIGURATION **********************************/
 #ifdef USB_OTG_HS_CORE
  #define RX_FIFO_HS_SIZE                          512
- #define TX0_FIFO_HS_SIZE                         512
- #define TX1_FIFO_HS_SIZE                         512
+ #define TX0_FIFO_HS_SIZE                         128
+ #define TX1_FIFO_HS_SIZE                         372
  #define TX2_FIFO_HS_SIZE                          0
  #define TX3_FIFO_HS_SIZE                          0
  #define TX4_FIFO_HS_SIZE                          0
@@ -161,7 +161,7 @@
 // #define USB_OTG_HS_SOF_OUTPUT_ENABLED
 
 // #define USB_OTG_INTERNAL_VBUS_ENABLED
- #define USB_OTG_EXTERNAL_VBUS_ENABLED
+// #define USB_OTG_EXTERNAL_VBUS_ENABLED
 
  #ifdef USE_ULPI_PHY
   #define USB_OTG_ULPI_PHY_ENABLED

@@ -30,6 +30,22 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
+typedef struct
+{
+    uint32_t bitrate;
+    uint8_t  format;
+    uint8_t  paritytype;
+    uint8_t  datatype;
+}LINE_CODING;
+
+LINE_CODING linecoding =
+{
+    115200, /* baud rate*/
+    0x00,   /* stop bits-1*/
+    0x00,   /* parity - none*/
+    0x08    /* nb. of bits 8*/
+};
+
 /* These are external variables imported from CDC core to be used for IN 
    transfer management. */
 extern uint8_t  APP_Rx_Buffer []; /* Write CDC received data in this buffer.

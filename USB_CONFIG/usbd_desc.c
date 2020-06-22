@@ -45,7 +45,7 @@
   */
 
 #define USBD_VID                   0x0483
-#define USBD_PID                   0x5740
+#define USBD_PID                   0x5785
 
 #define USBD_LANGID_STRING         0x409
 #define USBD_MANUFACTURER_STRING      "STMicroelectronics"
@@ -55,6 +55,8 @@
 #define USBD_INTERFACE_HS_STRING      "VCP Interface"
 #define USBD_CONFIGURATION_FS_STRING  "VCP Config"
 #define USBD_INTERFACE_FS_STRING      "VCP Interface"
+#define USBD_SERIALNUMBER_HS_STRING   "00000000001A"
+#define USBD_SERIALNUMBER_FS_STRING   "00000000001B"
 /**
   * @}
   */
@@ -93,7 +95,7 @@ __ALIGN_BEGIN uint8_t USBD_DeviceDesc[USB_SIZ_DEVICE_DESC] __ALIGN_END = {
   USB_DEVICE_DESCRIPTOR_TYPE,   /* bDescriptorType */
   0x00,                         /* bcdUSB */
   0x02,
-  0x00,                         /* bDeviceClass */
+  0x02,                         /* bDeviceClass */
   0x00,                         /* bDeviceSubClass */
   0x00,                         /* bDeviceProtocol */
   USB_OTG_MAX_EP0_SIZE,         /* bMaxPacketSize */
@@ -245,13 +247,22 @@ uint8_t *USBD_USR_ManufacturerStrDescriptor(uint8_t speed, uint16_t * length)
 */
 uint8_t *USBD_USR_SerialStrDescriptor(uint8_t speed, uint16_t * length)
 {
-  *length = USB_SIZ_STRING_SERIAL;
+//  *length = USB_SIZ_STRING_SERIAL;
 
-  /* Update the serial number string descriptor with the data from the unique
-   * ID */
-  Get_SerialNum();
+//  /* Update the serial number string descriptor with the data from the unique
+//   * ID */
+//  Get_SerialNum();
 
-  return (uint8_t *) USBD_StringSerial;
+//  return (uint8_t *) USBD_StringSerial;
+    if(speed  == USB_OTG_SPEED_HIGH)
+      {    
+        USBD_GetString (USBD_SERIALNUMBER_HS_STRING, USBD_StrDesc, length);
+      }
+      else
+      {
+        USBD_GetString (USBD_SERIALNUMBER_FS_STRING, USBD_StrDesc, length);    
+      }
+      return USBD_StrDesc;
 }
 
 /**

@@ -824,7 +824,7 @@ void USBD_CtlError( USB_OTG_CORE_HANDLE  *pdev,
 void USBD_GetString(uint8_t *desc, uint8_t *unicode, uint16_t *len)
 {
   uint8_t idx = 0;
-
+    
   if (desc != NULL)
   {
     *len =  USBD_GetLen(desc) * 2 + 2;
